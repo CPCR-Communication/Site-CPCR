@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CPCR Communication — Objets publicitaires, textile personnalisé et cadeaux d'affaires à Valence et Grenoble. Devis réactifs depuis 1998." />
+  <title>CPCR Communication — Objets publicitaires &amp; cadeaux d'affaires — Valence &amp; Grenoble</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="is-loading">
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__shell">
+      <a href="#accueil" class="navbar__brand" aria-label="CPCR Communication — Accueil">
+        <img
+          src="images\Logo\cpcr-logo.png"
+          alt="CPCR Communication"
+          class="navbar__logo"
+          width="200"
+          height="56"
+          decoding="async"
+        />
+      </a>
+      <button type="button" class="navbar__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+      <nav class="navbar__links" id="nav-menu" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#catalogues">Nos Catalogues</a>
+        <a href="#engagement">Notre Engagement</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn--primary navbar__links-cta">Demander un devis</a>
+      </nav>
+      <a href="#contact" class="btn btn--primary navbar__cta">Demander un devis</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero deux colonnes -->
+    <section id="accueil" class="hero section">
+      <div class="hero__layout">
+        <div class="hero__content">
+          <p class="hero__location">
+            <i data-lucide="map-pin" aria-hidden="true"></i>
+            Grenoble - Valence
+          </p>
+          <h1>Objets Publicitaires RSE <br> Textile publicitaire <br> Cadeaux d'affaires <br> Made in France</h1>
+          <p class="hero__subtitle">
+            Depuis 1998, CPCR Communication vous conseille et sélectionne les meilleurs
+            goodies adaptés à vos projets et à votre budget. Profitez d'un accompagnement
+            de proximité à Valence et Grenoble, avec des devis réactifs.
+          </p>
+          <div class="hero__actions">
+            <a href="#catalogues" class="btn btn--primary btn--lg">
+              Découvrir nos catalogues
+              <i data-lucide="chevron-right" aria-hidden="true"></i>
+            </a>
+            <a href="#contact" class="btn btn--outline btn--lg">Demander un devis</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__image-wrap">
+            <img
+              src="images\Hero\Hero Goodies V3.webp"
+              alt="Sélection d'objets publicitaires et goodies personnalisés CPCR Communication"
+              class="hero__image"
+              width="900"
+              height="700"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Présentation entreprise -->
+    <section id="presentation" class="presentation section">
+      <div class="container">
+        <div class="presentation__intro">
+          <p class="presentation__lead">
+            Notre cœur de métier : vous proposer des idées de goodies adaptées à vos besoins.
+            <strong>Notre engagement : vous faire gagner du temps.</strong>
+            Confiez-nous vos recherches de cadeaux et de goodies, et testez notre réactivité !
+          </p>
+        </div>
+        <div class="hero__features">
+          <div class="hero-feature-card">
+            <div class="hero-feature-card__icon">
+              <i data-lucide="zap" aria-hidden="true"></i>
+            </div>
+            <h3>Gain de temps</h3>
+            <p>Une recherche spécifique ? Confiez-nous vos demandes, nous trouvons le bon objet.</p>
+          </div>
+          <div class="hero-feature-card">
+            <div class="hero-feature-card__icon">
+              <i data-lucide="award" aria-hidden="true"></i>
+            </div>
+            <h3>Expertise depuis 1998</h3>
+            <p>Plus de 25 ans d'accompagnement sur mesure pour valoriser au mieux votre image lors de vos événements.</p>
+          </div>
+          <div class="hero-feature-card">
+            <div class="hero-feature-card__icon">
+              <i data-lucide="thumbs-up" aria-hidden="true"></i>
+            </div>
+            <h3>Sélection sur mesure</h3>
+            <p>Des propositions adaptées précisément à vos besoins, votre budget et vos délais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogues interactifs (style Chenet) -->
+    <section id="catalogues" class="catalogues section section--alt">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <h2>Nos catalogues</h2>
+          <p class="section-intro">
+            Survolez un catalogue pour afficher sa couverture, ou laissez le diaporama
+            les présenter automatiquement. Cliquez pour ouvrir le catalogue.
+          </p>
+        </header>
+
+        <div class="catalogues-showcase" id="catalogues-showcase">
+          <nav class="catalogues-list" aria-label="Liste des catalogues">
+            <a
+              href="https://view.publitas.com/md-fr/gifts_fr_eur_1/page/1"
+              class="catalogues-list__item is-active"
+              data-image="images/Photos catalogue/NOTRE-COLLECTION-RESPONSABLE-EN-DELAIS-COURTS.webp"
+              data-label="Collection responsable en délais courts"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">01</span>
+              <span class="catalogues-list__label"> Collection responsable en délais courts</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://online.fliphtml5.com/otna/nqug/#p=1"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/Objets-publicitaires-fabrication-française.webp"
+              data-label="Objets publicitaires fabrication française"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">02</span>
+              <span class="catalogues-list__label">Objets publicitaires fabrication française</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.calameo.com/read/00533424218b3ccf2e30d"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/Offrez-de-la-nature.webp"
+              data-label="Offrez de la nature"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">03</span>
+              <span class="catalogues-list__label">Offrez de la nature</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://generalcatalogue2026.eu/3bd754d9de7b675359c7e014aff3fab3/"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/Le-plus-grand-catalogue-du-monde.webp"
+              data-label="Le plus gros catalogue du monde"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">04</span>
+              <span class="catalogues-list__label">Le plus gros catalogue du monde</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://catalogue.sologroup-paris.com/solo-group/e-catalogue-fr-2026/"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/Textile.webp"
+              data-label="Textile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">05</span>
+              <span class="catalogues-list__label">Textile</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.senator-france.fr/Catalogue_Virtuel/Catalogue-senator-FR-2026/"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/L_écriture-by-Senator.webp"
+              data-label="L'écriture by Senator"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">06</span>
+              <span class="catalogues-list__label">L'écriture by Senator</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://viewer.xdcollection.com/main/fr/eur/2026/?page=1"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/Cadeaux-ultra-vip.webp"
+              data-label="Cadeaux ultra VIP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">07</span>
+              <span class="catalogues-list__label">Cadeaux ultra VIP</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.calameo.com/citizengreen/read/008128381b781486f0271"
+              class="catalogues-list__item"
+              data-image="images/Photos catalogue/Made-in-France.webp"
+              data-label="Made in France"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="catalogues-list__index" aria-hidden="true">08</span>
+              <span class="catalogues-list__label">Made in France</span>
+              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
+            </a>
+
+          </nav>
+
+          <div class="catalogues-preview">
+            <div class="catalogues-preview__frame">
+              <img
+                id="catalogue-cover"
+                class="catalogues-preview__image is-visible"
+                src="images/Photos catalogue/NOTRE-COLLECTION-RESPONSABLE-EN-DELAIS-COURTS.webp"
+                alt="Couverture du catalogue Collection responsable en délais courts"
+                width="600"
+                height="800"
+              />
+              <div class="catalogues-preview__splash" id="catalogue-splash" aria-hidden="true">
+                <img
+                  src="images\Logo\cpcr-logo.png"
+                  alt=""
+                  class="catalogues-preview__splash-logo"
+                  width="160"
+                  height="45"
+                />
+              </div>
+            </div>
+            <p class="catalogues-preview__caption" id="catalogue-caption">Collection responsable en délais courts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="engagement" class="engagement section">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <h2>Notre engagement</h2>
+        </header>
+        <div class="engagement__grid">
+          <article class="engagement-item">
+            <div class="engagement-item__icon">
+              <i data-lucide="user-check" aria-hidden="true"></i>
+            </div>
+            <h3>Conseil &amp; Proximité</h3>
+            <p>Un interlocuteur unique pour vous guider de l'idée à la livraison.</p>
+          </article>
+          <article class="engagement-item">
+            <div class="engagement-item__icon">
+              <i data-lucide="award" aria-hidden="true"></i>
+            </div>
+            <h3>Qualité de Marquage</h3>
+            <p>
+              Une sélection rigoureuse de techniques de personnalisation (broderie, sérigraphie,
+              gravure) pour un rendu impeccable.
+            </p>
+          </article>
+          <article class="engagement-item">
+            <div class="engagement-item__icon">
+              <i data-lucide="layers" aria-hidden="true"></i>
+            </div>
+            <h3>Large Choix Fournisseurs</h3>
+            <p>
+              Accès aux meilleurs catalogues européens pour trouver l'objet exact qui correspond
+              à votre budget.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section section--alt">
+      <div class="container">
+        <header class="section-header contact__header">
+          <h2>Contact &amp; devis</h2>
+          <p class="section-intro">
+            Décrivez votre besoin B2B : nos équipes à Grenoble et Valence vous répondent avec une proposition sur mesure.
+          </p>
+        </header>
+
+        <aside class="contact__info" aria-label="Nos agences">
+          <div class="contact__info-icon">
+            <i data-lucide="map-pin" aria-hidden="true"></i>
+          </div>
+          <div class="contact__info-body">
+            <p class="contact__info-title">Valence &amp; Grenoble</p>
+            <p class="contact__info-text">
+              Implantés à Grenoble depuis 1998 et à Valence depuis 2010.
+              <address class="contact__info-address">155 Cours Berriat, 38000 Grenoble</address>
+            </p>
+            <div class="contact__info-actions">
+              <a href="tel:+33476214650">04 76 21 46 50</a>
+              <a
+                href="https://maps.google.com/?q=155+Cours+Berriat+38000+Grenoble"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Voir sur la carte
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="contact__form-wrap">
+        <form class="contact-form" id="contact-form" action="#" method="post" novalidate>
+          <div class="form-row form-row--half">
+            <div>
+              <label for="nom">Nom / Prénom <span class="required">*</span></label>
+              <input type="text" id="nom" name="nom" required autocomplete="name" placeholder="Jean Dupont" />
+            </div>
+            <div>
+              <label for="entreprise">Entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" autocomplete="organization" placeholder="Raison sociale" />
+            </div>
+          </div>
+          <div class="form-row form-row--half">
+            <div>
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="04 00 00 00 00" />
+            </div>
+            <div>
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="vous@entreprise.fr" />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="objet">Objet de la demande</label>
+            <input type="text" id="objet" name="objet" placeholder="Devis textile, goodies salon, cadeaux fin d'année…" />
+          </div>
+          <div class="form-row">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="6" required placeholder="Précisez les quantités, le type d'objets recherchés, les délais et le marquage souhaité…"></textarea>
+          </div>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite" hidden></p>
+          <button type="submit" class="btn btn--primary btn--lg btn--submit">
+            Envoyer ma demande
+            <i data-lucide="send" aria-hidden="true"></i>
+          </button>
+        </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#accueil" class="footer__brand">
+        <img
+          src="images\Logo\cpcr-logo.png"
+          alt="CPCR Communication"
+          class="footer__logo"
+          width="160"
+          height="45"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <nav class="footer__links" aria-label="Pied de page">
+        <a href="#accueil">Accueil</a>
+        <a href="#catalogues">Nos Catalogues</a>
+        <a href="#engagement">Notre Engagement</a>
+        <a href="#contact">Contact</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="#">Mentions légales</a>
+        <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+      </nav>
+      <p class="footer__location">
+        <i data-lucide="map-pin" aria-hidden="true"></i>
+        Grenoble &amp; Valence
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="tel:+33476214650">04 76 21 46 50</a>
+      </p>
+      <p class="footer__copy">© 2026 CPCR Communication — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/page-transition.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
