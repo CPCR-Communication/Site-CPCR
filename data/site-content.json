@@ -72,6 +72,11 @@
         "url": "https://www.senator-france.fr/Catalogue_Virtuel/Catalogue-senator-FR-2026/"
       },
       {
+        "label": "Youtube",
+        "image": "images/uploads/IMG_2672-1782256657966.jpg",
+        "url": "https://www.youtube.com"
+      },
+      {
         "label": "Cadeaux ultra VIP",
         "image": "images/Photos catalogue/Cadeaux-ultra-vip.webp",
         "url": "https://viewer.xdcollection.com/main/fr/eur/2026/?page=1"
@@ -80,11 +85,6 @@
         "label": "Made in France",
         "image": "images/Photos catalogue/Made-in-France.webp",
         "url": "https://www.calameo.com/citizengreen/read/008128381b781486f0271"
-      },
-      {
-        "label": "Youtube",
-        "image": "images/uploads/IMG_2672-1782256657966.jpg",
-        "url": "https://www.youtube.com"
       }
     ]
   },
