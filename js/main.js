@@ -78,6 +78,15 @@
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
 
+      const nom = contactForm.querySelector('[name="nom"]').value.trim();
+      const entreprise = contactForm.querySelector('[name="entreprise"]').value.trim();
+      const subjectField = contactForm.querySelector('[name="subject"]');
+      if (subjectField) {
+        subjectField.value = entreprise
+          ? `[Nouveau devis] ${nom} — ${entreprise}`
+          : `[Nouveau devis] ${nom}`;
+      }
+
       try {
         const response = await fetch("/", {
           method: "POST",
