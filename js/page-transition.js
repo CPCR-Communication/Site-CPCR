@@ -2,19 +2,16 @@
   "use strict";
 
   const TRANSITION_MS = 650;
-  const TRANSITION_TARGETS = [
-    "politique-de-confidentialite.html",
-    "admin/index.html",
-    "admin/",
-  ];
   let isTransitioning = false;
 
   function getLogoSrc() {
-    const logo = document.querySelector(".navbar__logo, .footer__logo");
+    const logo = document.querySelector(".navbar__logo, .footer__logo, .login-card__logo");
     if (logo && logo.getAttribute("src")) {
       return logo.getAttribute("src").replace(/\\/g, "/");
     }
-    return "images/Logo/cpcr-logo.png";
+
+    const inAdmin = /\/admin(?:\/|$)/i.test(window.location.pathname);
+    return inAdmin ? "../images/Logo/cpcr-logo.png" : "images/Logo/cpcr-logo.png";
   }
 
   function ensureOverlay() {
@@ -43,6 +40,56 @@
     return overlay;
   }
 
+  function resetTransition() {
+    isTransitioning = false;
+    const overlay = document.getElementById("page-transition");
+    if (!overlay) return;
+    overlay.classList.remove("is-active");
+    overlay.setAttribute("aria-hidden", "true");
+  }
+
+  function getPageKey(pathname) {
+    const path = (pathname || "/").toLowerCase().replace(/\\/g, "/");
+    const segments = path.split("/").filter(Boolean);
+    const last = segments[segments.length - 1] || "";
+
+    if (segments.includes("admin")) return "admin";
+    if (last === "politique-de-confidentialite.html" || last === "politique-de-confidentialite") {
+      return "politique";
+    }
+    if (!segments.length || last === "index.html") return "home";
+    return path;
+  }
+
+  function isAnimatedPageLink(link, event) {
+    if (event.defaultPrevented) return false;
+    if (link.target === "_blank") return false;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return false;
+    }
+
+    const rawHref = (link.getAttribute("href") || "").trim();
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("tel:") || rawHref.startsWith("mailto:")) {
+      return false;
+    }
+
+    let targetUrl;
+    try {
+      targetUrl = new URL(link.href, window.location.href);
+    } catch {
+      return false;
+    }
+
+    const currentUrl = new URL(window.location.href);
+    if (targetUrl.origin !== currentUrl.origin) return false;
+
+    const fromKey = getPageKey(currentUrl.pathname);
+    const toKey = getPageKey(targetUrl.pathname);
+    if (fromKey === toKey) return false;
+
+    return toKey === "home" || toKey === "politique" || toKey === "admin";
+  }
+
   function playPageTransition(callback) {
     if (isTransitioning) return;
     isTransitioning = true;
@@ -58,35 +105,28 @@
     }, TRANSITION_MS);
   }
 
-  function isAnimatedPageLink(link, event) {
-    if (event.defaultPrevented) return false;
-    if (link.target === "_blank") return false;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return false;
+  document.addEventListener(
+    "click",
+    (event) => {
+      const link = event.target.closest("a");
+      if (!link || !isAnimatedPageLink(link, event)) return;
 
-    const rawHref = link.getAttribute("href");
-    if (!rawHref) return false;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      playPageTransition(() => {
+        window.location.assign(link.href);
+      });
+    },
+    true
+  );
 
-    const matchesTarget = TRANSITION_TARGETS.some((target) => rawHref.includes(target));
-    if (!matchesTarget) return false;
-
-    let url;
-    try {
-      url = new URL(link.href, window.location.href);
-    } catch {
-      return false;
-    }
-
-    const current = new URL(window.location.href);
-    return url.origin === window.location.origin && url.pathname !== current.pathname;
-  }
-
-  document.addEventListener("click", (event) => {
-    const link = event.target.closest("a");
-    if (!link || !isAnimatedPageLink(link, event)) return;
-
-    event.preventDefault();
-    playPageTransition(() => {
-      window.location.assign(link.href);
-    });
+  window.addEventListener("pageshow", () => {
+    resetTransition();
   });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", resetTransition);
+  } else {
+    resetTransition();
+  }
 })();

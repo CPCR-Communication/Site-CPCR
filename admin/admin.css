@@ -507,3 +507,61 @@ textarea {
     margin-top: 0;
   }
 }
+
+/* --- Transition plein écran entre pages --- */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 253, 249, 0.92);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-transition__logo {
+  width: min(220px, 44vw);
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.page-transition.is-active {
+  visibility: visible;
+  pointer-events: all;
+  animation: page-transition-bg 0.65s ease-out forwards;
+}
+
+.page-transition.is-active .page-transition__logo {
+  animation: page-transition-logo 0.65s ease-out forwards;
+}
+
+@keyframes page-transition-bg {
+  0% { opacity: 0; }
+  18% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes page-transition-logo {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
