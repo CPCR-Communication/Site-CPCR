@@ -4,7 +4,7 @@
     "description": "CPCR Communication — Objets publicitaires, textile personnalisé et cadeaux d'affaires à Valence et Grenoble. Devis réactifs depuis 1998."
   },
   "hero": {
-    "location": "Grenoble - Valence",
+    "location": "Grenoble - Lyon",
     "titleLines": [
       "Objets Publicitaires RSE",
       "Textile publicitaire",
@@ -80,6 +80,11 @@
         "label": "Made in France",
         "image": "images/Photos catalogue/Made-in-France.webp",
         "url": "https://www.calameo.com/citizengreen/read/008128381b781486f0271"
+      },
+      {
+        "label": "Youtube",
+        "image": "images/uploads/IMG_2672-1782256657966.jpg",
+        "url": "https://www.youtube.com"
       }
     ]
   },
