@@ -67,7 +67,7 @@
   }
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       if (!contactForm.checkValidity()) {
@@ -75,13 +75,33 @@
         return;
       }
 
-      showFeedback(
-        "Merci ! Votre message a bien été enregistré. Branchez l’action du formulaire (Formspree, email, etc.) pour l’envoi réel.",
-        "success"
-      );
-      contactForm.reset();
-      if (typeof lucide !== "undefined") {
-        lucide.createIcons();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(contactForm)).toString(),
+        });
+
+        if (!response.ok) throw new Error("Erreur réseau");
+
+        showFeedback(
+          "Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.",
+          "success"
+        );
+        contactForm.reset();
+        if (typeof lucide !== "undefined") {
+          lucide.createIcons();
+        }
+      } catch {
+        showFeedback(
+          "Une erreur est survenue. Réessayez ou contactez-nous par téléphone.",
+          "error"
+        );
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
   }
