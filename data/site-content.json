@@ -4,7 +4,7 @@
     "description": "CPCR Communication — Objets publicitaires, textile personnalisé et cadeaux d'affaires à Valence et Grenoble. Devis réactifs depuis 1998."
   },
   "hero": {
-    "location": "Grenoble - Lyon",
+    "location": "Grenoble - Valence",
     "titleLines": [
       "Objets Publicitaires RSE",
       "Textile publicitaire",
@@ -70,11 +70,6 @@
         "label": "L'écriture by Senator",
         "image": "images/Photos catalogue/L_écriture-by-Senator.webp",
         "url": "https://www.senator-france.fr/Catalogue_Virtuel/Catalogue-senator-FR-2026/"
-      },
-      {
-        "label": "Youtube",
-        "image": "images/uploads/IMG_2672-1782256657966.jpg",
-        "url": "https://www.youtube.com"
       },
       {
         "label": "Cadeaux ultra VIP",
