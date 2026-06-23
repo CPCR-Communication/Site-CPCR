@@ -2,10 +2,15 @@
   "use strict";
 
   const TRANSITION_MS = 650;
+  const TRANSITION_TARGETS = [
+    "politique-de-confidentialite.html",
+    "admin/index.html",
+    "admin/",
+  ];
   let isTransitioning = false;
 
   function getLogoSrc() {
-    const logo = document.querySelector(".navbar__logo");
+    const logo = document.querySelector(".navbar__logo, .footer__logo");
     if (logo && logo.getAttribute("src")) {
       return logo.getAttribute("src").replace(/\\/g, "/");
     }
@@ -53,15 +58,16 @@
     }, TRANSITION_MS);
   }
 
-  function isPolitiqueLink(link, event) {
+  function isAnimatedPageLink(link, event) {
     if (event.defaultPrevented) return false;
     if (link.target === "_blank") return false;
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return false;
 
     const rawHref = link.getAttribute("href");
-    if (!rawHref || !rawHref.includes("politique-de-confidentialite.html")) {
-      return false;
-    }
+    if (!rawHref) return false;
+
+    const matchesTarget = TRANSITION_TARGETS.some((target) => rawHref.includes(target));
+    if (!matchesTarget) return false;
 
     let url;
     try {
@@ -76,7 +82,7 @@
 
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a");
-    if (!link || !isPolitiqueLink(link, event)) return;
+    if (!link || !isAnimatedPageLink(link, event)) return;
 
     event.preventDefault();
     playPageTransition(() => {

@@ -10,12 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="admin.css" />
 </head>
-<body>
-  <div id="login-screen" class="login-screen" hidden>
+<body class="is-login-locked">
+  <div id="login-screen" class="login-screen">
     <div class="login-card">
       <img src="../images/Logo/cpcr-logo.png" alt="CPCR Communication" class="login-card__logo" width="180" height="50" onerror="this.style.display='none'" />
       <h1>Gestion du site</h1>
-      <p class="login-card__hint">Entrez votre mot de passe pour modifier les textes et catalogues du site.</p>
+      <p class="login-card__hint">Entrez le mot de passe administrateur pour modifier le contenu du site.</p>
       <form id="login-form">
         <label for="login-password">Mot de passe</label>
         <input type="password" id="login-password" autocomplete="current-password" required />

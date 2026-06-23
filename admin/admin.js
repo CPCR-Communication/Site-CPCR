@@ -78,11 +78,15 @@
   }
 
   function showLogin() {
+    document.body.classList.remove("is-authenticated");
+    document.body.classList.add("is-login-locked");
     loginScreen.hidden = false;
     adminApp.hidden = true;
   }
 
   function showAdmin() {
+    document.body.classList.add("is-authenticated");
+    document.body.classList.remove("is-login-locked");
     loginScreen.hidden = true;
     adminApp.hidden = false;
   }
