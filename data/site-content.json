@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "CPCR Communication — Objets publicitaires & cadeaux d'affaires — Valence & Grenoble",
+    "description": "CPCR Communication — Objets publicitaires, textile personnalisé et cadeaux d'affaires à Valence et Grenoble. Devis réactifs depuis 1998."
+  },
+  "hero": {
+    "location": "Grenoble - Valence",
+    "titleLines": [
+      "Objets Publicitaires RSE",
+      "Textile publicitaire",
+      "Cadeaux d'affaires",
+      "Made in France"
+    ],
+    "subtitle": "Depuis 1998, CPCR Communication vous conseille et sélectionne les meilleurs goodies adaptés à vos projets et à votre budget. Profitez d'un accompagnement de proximité à Valence et Grenoble, avec des devis réactifs.",
+    "image": "images/Hero/Hero Goodies V3.webp",
+    "imageAlt": "Sélection d'objets publicitaires et goodies personnalisés CPCR Communication",
+    "ctaCatalogues": "Découvrir nos catalogues",
+    "ctaDevis": "Demander un devis"
+  },
+  "presentation": {
+    "lead": "Notre cœur de métier : vous proposer des idées de goodies adaptées à vos besoins. <strong>Notre engagement : vous faire gagner du temps.</strong> Confiez-nous vos recherches de cadeaux et de goodies, et testez notre réactivité !",
+    "features": [
+      {
+        "icon": "zap",
+        "title": "Gain de temps",
+        "text": "Une recherche spécifique ? Confiez-nous vos demandes, nous trouvons le bon objet."
+      },
+      {
+        "icon": "award",
+        "title": "Expertise depuis 1998",
+        "text": "Plus de 25 ans d'accompagnement sur mesure pour valoriser au mieux votre image lors de vos événements."
+      },
+      {
+        "icon": "thumbs-up",
+        "title": "Sélection sur mesure",
+        "text": "Des propositions adaptées précisément à vos besoins, votre budget et vos délais."
+      }
+    ]
+  },
+  "catalogues": {
+    "title": "Nos catalogues",
+    "intro": "Survolez un catalogue pour afficher sa couverture, ou laissez le diaporama les présenter automatiquement. Cliquez pour ouvrir le catalogue.",
+    "items": [
+      {
+        "label": "Collection responsable en délais courts",
+        "image": "images/Photos catalogue/NOTRE-COLLECTION-RESPONSABLE-EN-DELAIS-COURTS.webp",
+        "url": "https://view.publitas.com/md-fr/gifts_fr_eur_1/page/1"
+      },
+      {
+        "label": "Objets publicitaires fabrication française",
+        "image": "images/Photos catalogue/Objets-publicitaires-fabrication-française.webp",
+        "url": "https://online.fliphtml5.com/otna/nqug/#p=1"
+      },
+      {
+        "label": "Offrez de la nature",
+        "image": "images/Photos catalogue/Offrez-de-la-nature.webp",
+        "url": "https://www.calameo.com/read/00533424218b3ccf2e30d"
+      },
+      {
+        "label": "Le plus gros catalogue du monde",
+        "image": "images/Photos catalogue/Le-plus-grand-catalogue-du-monde.webp",
+        "url": "https://generalcatalogue2026.eu/3bd754d9de7b675359c7e014aff3fab3/"
+      },
+      {
+        "label": "Textile",
+        "image": "images/Photos catalogue/Textile.webp",
+        "url": "https://catalogue.sologroup-paris.com/solo-group/e-catalogue-fr-2026/"
+      },
+      {
+        "label": "L'écriture by Senator",
+        "image": "images/Photos catalogue/L_écriture-by-Senator.webp",
+        "url": "https://www.senator-france.fr/Catalogue_Virtuel/Catalogue-senator-FR-2026/"
+      },
+      {
+        "label": "Cadeaux ultra VIP",
+        "image": "images/Photos catalogue/Cadeaux-ultra-vip.webp",
+        "url": "https://viewer.xdcollection.com/main/fr/eur/2026/?page=1"
+      },
+      {
+        "label": "Made in France",
+        "image": "images/Photos catalogue/Made-in-France.webp",
+        "url": "https://www.calameo.com/citizengreen/read/008128381b781486f0271"
+      }
+    ]
+  },
+  "engagement": {
+    "title": "Notre engagement",
+    "items": [
+      {
+        "icon": "user-check",
+        "title": "Conseil & Proximité",
+        "text": "Un interlocuteur unique pour vous guider de l'idée à la livraison."
+      },
+      {
+        "icon": "award",
+        "title": "Qualité de Marquage",
+        "text": "Une sélection rigoureuse de techniques de personnalisation (broderie, sérigraphie, gravure) pour un rendu impeccable."
+      },
+      {
+        "icon": "layers",
+        "title": "Large Choix Fournisseurs",
+        "text": "Accès aux meilleurs catalogues européens pour trouver l'objet exact qui correspond à votre budget."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact & devis",
+    "intro": "Décrivez votre besoin B2B : nos équipes à Grenoble et Valence vous répondent avec une proposition sur mesure.",
+    "locationTitle": "Valence & Grenoble",
+    "locationText": "Implantés à Grenoble depuis 1998 et à Valence depuis 2010.",
+    "address": "155 Cours Berriat, 38000 Grenoble",
+    "phone": "04 76 21 46 50",
+    "phoneLink": "+33476214650",
+    "mapUrl": "https://maps.google.com/?q=155+Cours+Berriat+38000+Grenoble",
+    "mapLabel": "Voir sur la carte"
+  },
+  "footer": {
+    "location": "Grenoble & Valence",
+    "copyright": "© 2026 CPCR Communication — Tous droits réservés."
+  }
+}

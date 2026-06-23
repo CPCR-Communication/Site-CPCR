@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Gestion du site — CPCR Communication</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div id="login-screen" class="login-screen" hidden>
+    <div class="login-card">
+      <img src="../images/Logo/cpcr-logo.png" alt="CPCR Communication" class="login-card__logo" width="180" height="50" onerror="this.style.display='none'" />
+      <h1>Gestion du site</h1>
+      <p class="login-card__hint">Entrez votre mot de passe pour modifier les textes et catalogues du site.</p>
+      <form id="login-form">
+        <label for="login-password">Mot de passe</label>
+        <input type="password" id="login-password" autocomplete="current-password" required />
+        <p class="form-error" id="login-error" hidden></p>
+        <button type="submit" class="btn btn--primary btn--block">Se connecter</button>
+      </form>
+      <p class="login-card__footer"><a href="../index.html">← Retour au site</a></p>
+    </div>
+  </div>
+
+  <div id="admin-app" class="admin-app" hidden>
+    <header class="admin-header">
+      <div class="admin-header__brand">
+        <h1>Gestion du site</h1>
+        <p>Modifiez les textes et catalogues, puis cliquez sur <strong>Enregistrer</strong>.</p>
+      </div>
+      <div class="admin-header__actions">
+        <a href="../index.html" class="btn btn--ghost" target="_blank" rel="noopener">Voir le site</a>
+        <button type="button" class="btn btn--primary" id="btn-save">Enregistrer</button>
+        <button type="button" class="btn btn--ghost" id="btn-logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <div class="admin-status" id="admin-status" role="status" aria-live="polite" hidden></div>
+
+    <nav class="admin-tabs" aria-label="Sections du site">
+      <button type="button" class="admin-tabs__btn is-active" data-tab="accueil">Accueil</button>
+      <button type="button" class="admin-tabs__btn" data-tab="catalogues">Catalogues</button>
+      <button type="button" class="admin-tabs__btn" data-tab="engagement">Engagement</button>
+      <button type="button" class="admin-tabs__btn" data-tab="contact">Contact</button>
+      <button type="button" class="admin-tabs__btn" data-tab="parametres">Paramètres</button>
+    </nav>
+
+    <main class="admin-main">
+      <section class="admin-panel is-active" data-panel="accueil">
+        <h2>Page d'accueil</h2>
+        <div class="admin-card">
+          <h3>Bannière principale</h3>
+          <div class="field">
+            <label for="hero-location">Localisation</label>
+            <input type="text" id="hero-location" data-path="hero.location" />
+          </div>
+          <div class="field">
+            <label for="hero-title-lines">Titre principal <span class="field-hint">(une ligne par entrée)</span></label>
+            <textarea id="hero-title-lines" rows="4" data-lines="hero.titleLines"></textarea>
+          </div>
+          <div class="field">
+            <label for="hero-subtitle">Texte d'introduction</label>
+            <textarea id="hero-subtitle" rows="4" data-path="hero.subtitle"></textarea>
+          </div>
+          <div class="field field--image">
+            <label>Image de la bannière</label>
+            <div class="image-field">
+              <img id="hero-image-preview" class="image-field__preview" alt="" />
+              <div class="image-field__controls">
+                <input type="text" id="hero-image" data-path="hero.image" placeholder="images/Hero/..." />
+                <label class="btn btn--outline btn--sm">
+                  Changer l'image
+                  <input type="file" accept="image/*" data-upload-target="hero.image" hidden />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="hero-image-alt">Description de l'image (accessibilité)</label>
+            <input type="text" id="hero-image-alt" data-path="hero.imageAlt" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="hero-cta-catalogues">Bouton catalogues</label>
+              <input type="text" id="hero-cta-catalogues" data-path="hero.ctaCatalogues" />
+            </div>
+            <div class="field">
+              <label for="hero-cta-devis">Bouton devis</label>
+              <input type="text" id="hero-cta-devis" data-path="hero.ctaDevis" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Présentation</h3>
+          <div class="field">
+            <label for="presentation-lead">Texte principal</label>
+            <textarea id="presentation-lead" rows="3" data-path="presentation.lead"></textarea>
+            <p class="field-hint">Vous pouvez mettre du texte en gras avec &lt;strong&gt;mot en gras&lt;/strong&gt;</p>
+          </div>
+          <div id="presentation-features-editor"></div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Référencement (Google)</h3>
+          <div class="field">
+            <label for="meta-title">Titre de la page</label>
+            <input type="text" id="meta-title" data-path="meta.title" />
+          </div>
+          <div class="field">
+            <label for="meta-description">Description</label>
+            <textarea id="meta-description" rows="2" data-path="meta.description"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-panel="catalogues" hidden>
+        <h2>Catalogues</h2>
+        <div class="admin-card">
+          <div class="field">
+            <label for="catalogues-title">Titre de la section</label>
+            <input type="text" id="catalogues-title" data-path="catalogues.title" />
+          </div>
+          <div class="field">
+            <label for="catalogues-intro">Texte d'introduction</label>
+            <textarea id="catalogues-intro" rows="2" data-path="catalogues.intro"></textarea>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card__header">
+            <h3>Liste des catalogues</h3>
+            <button type="button" class="btn btn--outline btn--sm" id="btn-add-catalogue">+ Ajouter un catalogue</button>
+          </div>
+          <p class="field-hint">Glissez-déposez les catalogues pour changer leur ordre d'affichage.</p>
+          <div id="catalogues-editor" class="catalogues-editor"></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-panel="engagement" hidden>
+        <h2>Notre engagement</h2>
+        <div class="admin-card">
+          <div class="field">
+            <label for="engagement-title">Titre de la section</label>
+            <input type="text" id="engagement-title" data-path="engagement.title" />
+          </div>
+          <div id="engagement-items-editor"></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-panel="contact" hidden>
+        <h2>Contact & pied de page</h2>
+        <div class="admin-card">
+          <h3>Section contact</h3>
+          <div class="field">
+            <label for="contact-title">Titre</label>
+            <input type="text" id="contact-title" data-path="contact.title" />
+          </div>
+          <div class="field">
+            <label for="contact-intro">Introduction</label>
+            <textarea id="contact-intro" rows="2" data-path="contact.intro"></textarea>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="contact-location-title">Titre agences</label>
+              <input type="text" id="contact-location-title" data-path="contact.locationTitle" />
+            </div>
+            <div class="field">
+              <label for="contact-location-text">Texte agences</label>
+              <input type="text" id="contact-location-text" data-path="contact.locationText" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="contact-address">Adresse</label>
+            <input type="text" id="contact-address" data-path="contact.address" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="contact-phone">Téléphone affiché</label>
+              <input type="text" id="contact-phone" data-path="contact.phone" />
+            </div>
+            <div class="field">
+              <label for="contact-phone-link">Lien téléphone (sans espaces)</label>
+              <input type="text" id="contact-phone-link" data-path="contact.phoneLink" placeholder="+33476214650" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="contact-map-url">Lien Google Maps</label>
+              <input type="url" id="contact-map-url" data-path="contact.mapUrl" />
+            </div>
+            <div class="field">
+              <label for="contact-map-label">Texte du lien carte</label>
+              <input type="text" id="contact-map-label" data-path="contact.mapLabel" />
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Pied de page</h3>
+          <div class="field">
+            <label for="footer-location">Localisation</label>
+            <input type="text" id="footer-location" data-path="footer.location" />
+          </div>
+          <div class="field">
+            <label for="footer-copy">Copyright</label>
+            <input type="text" id="footer-copy" data-path="footer.copyright" />
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-panel="parametres" hidden>
+        <h2>Paramètres</h2>
+        <div class="admin-card">
+          <h3>Mot de passe</h3>
+          <p class="field-hint">
+            Le mot de passe de connexion se modifie dans le tableau de bord <strong>Netlify</strong> :
+            <em>Site configuration → Environment variables → ADMIN_PASSWORD</em>.
+            Demandez à la personne qui gère le site technique si vous souhaitez le changer.
+          </p>
+        </div>
+        <div class="admin-card admin-card--info">
+          <h3>Aide rapide</h3>
+          <ul>
+            <li>Modifiez ce que vous souhaitez, puis cliquez sur <strong>Enregistrer</strong> en haut à droite.</li>
+            <li>Pour les catalogues : changez le nom, l'image et le lien, puis réorganisez par glisser-déposer.</li>
+            <li>Les images envoyées sont enregistrées dans <code>images/uploads/</code>.</li>
+            <li>Les textes sont mis à jour immédiatement. Les nouvelles images peuvent prendre 1 à 2 minutes.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="admin-footer">
+      <button type="button" class="btn btn--primary btn--lg" id="btn-save-bottom">Enregistrer les modifications</button>
+    </footer>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

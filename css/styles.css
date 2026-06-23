@@ -243,7 +243,7 @@ p {
   z-index: 100;
   height: var(--nav-height);
   padding-left: var(--layout-gutter-left);
-  padding-right: 0;
+  padding-right: var(--layout-gutter-left);
   background: rgba(255, 253, 249, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -322,6 +322,7 @@ p {
   grid-row: 1;
   z-index: 2;
   justify-self: end;
+  margin-right: -0.5rem;
   white-space: nowrap;
 }
 
@@ -1229,6 +1230,16 @@ p {
   font-size: 0.8125rem;
   color: #9ca3af;
   letter-spacing: 0.02em;
+}
+
+.footer__admin {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  transition: color var(--transition);
+}
+
+.footer__admin:hover {
+  color: var(--color-accent);
 }
 
 /* --- Responsive --- */

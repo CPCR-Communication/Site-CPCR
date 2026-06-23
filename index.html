@@ -45,27 +45,28 @@
         <div class="hero__content">
           <p class="hero__location">
             <i data-lucide="map-pin" aria-hidden="true"></i>
-            Grenoble - Valence
+            <span id="hero-location">Grenoble - Valence</span>
           </p>
-          <h1>Objets Publicitaires RSE <br> Textile publicitaire <br> Cadeaux d'affaires <br> Made in France</h1>
-          <p class="hero__subtitle">
+          <h1 id="hero-title">Objets Publicitaires RSE <br> Textile publicitaire <br> Cadeaux d'affaires <br> Made in France</h1>
+          <p class="hero__subtitle" id="hero-subtitle">
             Depuis 1998, CPCR Communication vous conseille et sélectionne les meilleurs
             goodies adaptés à vos projets et à votre budget. Profitez d'un accompagnement
             de proximité à Valence et Grenoble, avec des devis réactifs.
           </p>
           <div class="hero__actions">
             <a href="#catalogues" class="btn btn--primary btn--lg">
-              Découvrir nos catalogues
+              <span id="hero-cta-catalogues">Découvrir nos catalogues</span>
               <i data-lucide="chevron-right" aria-hidden="true"></i>
             </a>
-            <a href="#contact" class="btn btn--outline btn--lg">Demander un devis</a>
+            <a href="#contact" class="btn btn--outline btn--lg"><span id="hero-cta-devis">Demander un devis</span></a>
           </div>
         </div>
 
         <div class="hero__visual">
           <div class="hero__image-wrap">
             <img
-              src="images\Hero\Hero Goodies V3.webp"
+              id="hero-image"
+              src="images/Hero/Hero Goodies V3.webp"
               alt="Sélection d'objets publicitaires et goodies personnalisés CPCR Communication"
               class="hero__image"
               width="900"
@@ -82,13 +83,13 @@
     <section id="presentation" class="presentation section">
       <div class="container">
         <div class="presentation__intro">
-          <p class="presentation__lead">
+          <p class="presentation__lead" id="presentation-lead">
             Notre cœur de métier : vous proposer des idées de goodies adaptées à vos besoins.
             <strong>Notre engagement : vous faire gagner du temps.</strong>
             Confiez-nous vos recherches de cadeaux et de goodies, et testez notre réactivité !
           </p>
         </div>
-        <div class="hero__features">
+        <div class="hero__features" id="presentation-features">
           <div class="hero-feature-card">
             <div class="hero-feature-card__icon">
               <i data-lucide="zap" aria-hidden="true"></i>
@@ -118,113 +119,15 @@
     <section id="catalogues" class="catalogues section section--alt">
       <div class="container">
         <header class="section-header section-header--center">
-          <h2>Nos catalogues</h2>
-          <p class="section-intro">
+          <h2 id="catalogues-title">Nos catalogues</h2>
+          <p class="section-intro" id="catalogues-intro">
             Survolez un catalogue pour afficher sa couverture, ou laissez le diaporama
             les présenter automatiquement. Cliquez pour ouvrir le catalogue.
           </p>
         </header>
 
         <div class="catalogues-showcase" id="catalogues-showcase">
-          <nav class="catalogues-list" aria-label="Liste des catalogues">
-            <a
-              href="https://view.publitas.com/md-fr/gifts_fr_eur_1/page/1"
-              class="catalogues-list__item is-active"
-              data-image="images/Photos catalogue/NOTRE-COLLECTION-RESPONSABLE-EN-DELAIS-COURTS.webp"
-              data-label="Collection responsable en délais courts"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">01</span>
-              <span class="catalogues-list__label"> Collection responsable en délais courts</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://online.fliphtml5.com/otna/nqug/#p=1"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/Objets-publicitaires-fabrication-française.webp"
-              data-label="Objets publicitaires fabrication française"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">02</span>
-              <span class="catalogues-list__label">Objets publicitaires fabrication française</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://www.calameo.com/read/00533424218b3ccf2e30d"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/Offrez-de-la-nature.webp"
-              data-label="Offrez de la nature"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">03</span>
-              <span class="catalogues-list__label">Offrez de la nature</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://generalcatalogue2026.eu/3bd754d9de7b675359c7e014aff3fab3/"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/Le-plus-grand-catalogue-du-monde.webp"
-              data-label="Le plus gros catalogue du monde"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">04</span>
-              <span class="catalogues-list__label">Le plus gros catalogue du monde</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://catalogue.sologroup-paris.com/solo-group/e-catalogue-fr-2026/"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/Textile.webp"
-              data-label="Textile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">05</span>
-              <span class="catalogues-list__label">Textile</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://www.senator-france.fr/Catalogue_Virtuel/Catalogue-senator-FR-2026/"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/L_écriture-by-Senator.webp"
-              data-label="L'écriture by Senator"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">06</span>
-              <span class="catalogues-list__label">L'écriture by Senator</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://viewer.xdcollection.com/main/fr/eur/2026/?page=1"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/Cadeaux-ultra-vip.webp"
-              data-label="Cadeaux ultra VIP"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">07</span>
-              <span class="catalogues-list__label">Cadeaux ultra VIP</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://www.calameo.com/citizengreen/read/008128381b781486f0271"
-              class="catalogues-list__item"
-              data-image="images/Photos catalogue/Made-in-France.webp"
-              data-label="Made in France"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="catalogues-list__index" aria-hidden="true">08</span>
-              <span class="catalogues-list__label">Made in France</span>
-              <i data-lucide="arrow-up-right" class="catalogues-list__arrow" aria-hidden="true"></i>
-            </a>
-
-          </nav>
+          <nav class="catalogues-list" id="catalogues-list" aria-label="Liste des catalogues"></nav>
 
           <div class="catalogues-preview">
             <div class="catalogues-preview__frame">
@@ -255,9 +158,9 @@
     <section id="engagement" class="engagement section">
       <div class="container">
         <header class="section-header section-header--center">
-          <h2>Notre engagement</h2>
+          <h2 id="engagement-title">Notre engagement</h2>
         </header>
-        <div class="engagement__grid">
+        <div class="engagement__grid" id="engagement-grid">
           <article class="engagement-item">
             <div class="engagement-item__icon">
               <i data-lucide="user-check" aria-hidden="true"></i>
@@ -292,8 +195,8 @@
     <section id="contact" class="contact section section--alt">
       <div class="container">
         <header class="section-header contact__header">
-          <h2>Contact &amp; devis</h2>
-          <p class="section-intro">
+          <h2 id="contact-title">Contact &amp; devis</h2>
+          <p class="section-intro" id="contact-intro">
             Décrivez votre besoin B2B : nos équipes à Grenoble et Valence vous répondent avec une proposition sur mesure.
           </p>
         </header>
@@ -303,19 +206,20 @@
             <i data-lucide="map-pin" aria-hidden="true"></i>
           </div>
           <div class="contact__info-body">
-            <p class="contact__info-title">Valence &amp; Grenoble</p>
+            <p class="contact__info-title" id="contact-location-title">Valence &amp; Grenoble</p>
             <p class="contact__info-text">
-              Implantés à Grenoble depuis 1998 et à Valence depuis 2010.
-              <address class="contact__info-address">155 Cours Berriat, 38000 Grenoble</address>
+              <span id="contact-location-text">Implantés à Grenoble depuis 1998 et à Valence depuis 2010.</span>
+              <address class="contact__info-address" id="contact-address">155 Cours Berriat, 38000 Grenoble</address>
             </p>
             <div class="contact__info-actions">
-              <a href="tel:+33476214650">04 76 21 46 50</a>
+              <a href="tel:+33476214650" id="contact-phone">04 76 21 46 50</a>
               <a
+                id="contact-map"
                 href="https://maps.google.com/?q=155+Cours+Berriat+38000+Grenoble"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Voir sur la carte
+                <span class="contact__map-label">Voir sur la carte</span>
                 <i data-lucide="arrow-up-right" aria-hidden="true"></i>
               </a>
             </div>
@@ -384,20 +288,23 @@
         <span class="footer__sep" aria-hidden="true">·</span>
         <a href="#">Mentions légales</a>
         <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="admin/" class="footer__admin" title="Gestion du site">Gestion du site</a>
       </nav>
       <p class="footer__location">
         <i data-lucide="map-pin" aria-hidden="true"></i>
-        Grenoble &amp; Valence
+        <span id="footer-location">Grenoble &amp; Valence</span>
         <span class="footer__sep" aria-hidden="true">·</span>
-        <a href="tel:+33476214650">04 76 21 46 50</a>
+        <a href="tel:+33476214650" id="footer-phone">04 76 21 46 50</a>
       </p>
-      <p class="footer__copy">© 2026 CPCR Communication — Tous droits réservés.</p>
+      <p class="footer__copy" id="footer-copy">© 2026 CPCR Communication — Tous droits réservés.</p>
     </div>
   </footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/page-transition.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/content-loader.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
