@@ -57,6 +57,9 @@
     if (last === "politique-de-confidentialite.html" || last === "politique-de-confidentialite") {
       return "politique";
     }
+    if (last === "mentions-legales.html" || last === "mentions-legales") {
+      return "mentions";
+    }
     if (!segments.length || last === "index.html") return "home";
     return path;
   }
@@ -87,7 +90,7 @@
     const toKey = getPageKey(targetUrl.pathname);
     if (fromKey === toKey) return false;
 
-    return toKey === "home" || toKey === "politique" || toKey === "admin";
+    return toKey === "home" || toKey === "politique" || toKey === "mentions" || toKey === "admin";
   }
 
   function playPageTransition(callback) {
