@@ -1269,7 +1269,7 @@ p {
   }
 
   .navbar__shell {
-    position: relative;
+    position: static;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr;
     align-items: center;
@@ -1296,17 +1296,17 @@ p {
   .navbar__links {
     position: absolute;
     top: 100%;
-    left: calc(-1 * var(--layout-gutter-left));
-    right: calc(-1 * var(--layout-gutter-left));
+    left: 0;
+    right: 0;
     z-index: 10;
-    width: auto;
+    width: 100%;
     pointer-events: auto;
     flex-direction: column;
     gap: 0;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    padding: 0 var(--layout-gutter-left);
+    padding: 0;
     background: rgba(255, 253, 249, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1323,7 +1323,7 @@ p {
   .navbar__links.is-open {
     max-height: 360px;
     opacity: 1;
-    padding: 0.75rem var(--layout-gutter-left) 0.5rem;
+    padding: 0.75rem 0 0.5rem;
     border-bottom-color: var(--color-border-light);
     box-shadow: var(--shadow-sm);
   }
