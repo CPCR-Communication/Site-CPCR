@@ -83,8 +83,8 @@
       const subjectField = contactForm.querySelector('[name="subject"]');
       if (subjectField) {
         subjectField.value = entreprise
-          ? `[Nouveau devis] ${nom} — ${entreprise}`
-          : `[Nouveau devis] ${nom}`;
+          ? `Nouvelle demande de devis ${nom} — ${entreprise}`
+          : `Nouvelle demande de devis ${nom}`;
       }
 
       try {
