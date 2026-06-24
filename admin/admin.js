@@ -186,6 +186,7 @@
       '<button type="button" class="catalogue-item__handle" title="Glisser pour réordonner" aria-label="Réordonner">⠿</button>' +
       '<div class="catalogue-item__body">' +
       '<div class="field"><label>Nom du catalogue</label><input type="text" data-cat-label /></div>' +
+      '<div class="field"><label>Pictogramme</label><input type="text" data-cat-icon placeholder="leaf, shirt, globe…" /><p class="field-hint">Nom d’icône Lucide — voir <a href="https://lucide.dev/icons/" target="_blank" rel="noopener noreferrer">lucide.dev/icons</a></p></div>' +
       '<div class="field"><label>Lien du catalogue</label><input type="url" data-cat-url placeholder="https://..." /></div>' +
       '<div class="field"><label>Image de couverture</label>' +
       '<div class="catalogue-item__image-row">' +
@@ -196,12 +197,16 @@
       '<button type="button" class="catalogue-item__remove">Supprimer</button>';
 
     el.querySelector("[data-cat-label]").value = item.label || "";
+    el.querySelector("[data-cat-icon]").value = item.icon || "";
     el.querySelector("[data-cat-url]").value = item.url || "";
     el.querySelector("[data-cat-image]").value = item.image || "";
     updateImagePreview(el.querySelector(".catalogue-item__preview"), item.image);
 
     el.querySelector("[data-cat-label]").addEventListener("input", function (e) {
       content.catalogues.items[index].label = e.target.value;
+    });
+    el.querySelector("[data-cat-icon]").addEventListener("input", function (e) {
+      content.catalogues.items[index].icon = e.target.value;
     });
     el.querySelector("[data-cat-url]").addEventListener("input", function (e) {
       content.catalogues.items[index].url = e.target.value;
@@ -389,6 +394,7 @@
     if (!content.catalogues.items) content.catalogues.items = [];
     content.catalogues.items.push({
       label: "Nouveau catalogue",
+      icon: "book-open",
       image: "",
       url: "",
     });

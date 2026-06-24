@@ -20,6 +20,20 @@
     return String(num).padStart(2, "0");
   }
 
+  function resolveCatalogueIcon(item) {
+    if (item.icon) return item.icon;
+    var label = (item.label || "").toLowerCase();
+    if (label.indexOf("responsable") !== -1 || label.indexOf("rse") !== -1) return "leaf";
+    if (label.indexOf("fabrication") !== -1) return "factory";
+    if (label.indexOf("nature") !== -1) return "trees";
+    if (label.indexOf("catalogue du monde") !== -1 || label.indexOf("gros catalogue") !== -1) return "globe";
+    if (label.indexOf("textile") !== -1) return "shirt";
+    if (label.indexOf("écriture") !== -1 || label.indexOf("senator") !== -1) return "pen-line";
+    if (label.indexOf("vip") !== -1) return "gem";
+    if (label.indexOf("made in france") !== -1) return "flag";
+    return "book-open";
+  }
+
   function buildCatalogueItem(item, index, isFirst) {
     var link = document.createElement("a");
     var image = normalizePath(item.image);
@@ -38,9 +52,22 @@
     indexSpan.setAttribute("aria-hidden", "true");
     indexSpan.textContent = padIndex(index + 1);
 
+    var iconWrap = document.createElement("span");
+    iconWrap.className = "catalogues-list__icon";
+    iconWrap.setAttribute("aria-hidden", "true");
+
+    var icon = document.createElement("i");
+    icon.setAttribute("data-lucide", resolveCatalogueIcon(item));
+    iconWrap.appendChild(icon);
+
     var labelSpan = document.createElement("span");
     labelSpan.className = "catalogues-list__label";
     labelSpan.textContent = label;
+
+    var mainWrap = document.createElement("span");
+    mainWrap.className = "catalogues-list__main";
+    mainWrap.appendChild(labelSpan);
+    mainWrap.appendChild(iconWrap);
 
     var arrow = document.createElement("i");
     arrow.setAttribute("data-lucide", "arrow-up-right");
@@ -48,7 +75,7 @@
     arrow.setAttribute("aria-hidden", "true");
 
     link.appendChild(indexSpan);
-    link.appendChild(labelSpan);
+    link.appendChild(mainWrap);
     link.appendChild(arrow);
 
     return link;

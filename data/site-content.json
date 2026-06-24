@@ -43,41 +43,49 @@
     "items": [
       {
         "label": "Collection responsable en délais courts",
+        "icon": "leaf",
         "image": "images/Photos catalogue/NOTRE-COLLECTION-RESPONSABLE-EN-DELAIS-COURTS.webp",
         "url": "https://view.publitas.com/md-fr/gifts_fr_eur_1/page/1"
       },
       {
         "label": "Objets publicitaires fabrication française",
+        "icon": "factory",
         "image": "images/Photos catalogue/Objets-publicitaires-fabrication-française.webp",
         "url": "https://online.fliphtml5.com/otna/nqug/#p=1"
       },
       {
         "label": "Offrez de la nature",
+        "icon": "trees",
         "image": "images/Photos catalogue/Offrez-de-la-nature.webp",
         "url": "https://www.calameo.com/read/00533424218b3ccf2e30d"
       },
       {
         "label": "Le plus gros catalogue du monde",
+        "icon": "globe",
         "image": "images/Photos catalogue/Le-plus-grand-catalogue-du-monde.webp",
         "url": "https://generalcatalogue2026.eu/3bd754d9de7b675359c7e014aff3fab3/"
       },
       {
         "label": "Textile",
+        "icon": "shirt",
         "image": "images/Photos catalogue/Textile.webp",
         "url": "https://catalogue.sologroup-paris.com/solo-group/e-catalogue-fr-2026/"
       },
       {
         "label": "L'écriture by Senator",
+        "icon": "pen-line",
         "image": "images/Photos catalogue/L_écriture-by-Senator.webp",
         "url": "https://www.senator-france.fr/Catalogue_Virtuel/Catalogue-senator-FR-2026/"
       },
       {
         "label": "Cadeaux ultra VIP",
+        "icon": "gem",
         "image": "images/Photos catalogue/Cadeaux-ultra-vip.webp",
         "url": "https://viewer.xdcollection.com/main/fr/eur/2026/?page=1"
       },
       {
         "label": "Made in France",
+        "icon": "flag",
         "image": "images/Photos catalogue/Made-in-France.webp",
         "url": "https://www.calameo.com/citizengreen/read/008128381b781486f0271"
       }
