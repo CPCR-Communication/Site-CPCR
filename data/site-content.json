@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "CPCR Communication — Objets publicitaires & cadeaux d'affaires — Valence & Grenoble",
-    "description": "CPCR Communication — Objets publicitaires, textile personnalisé et cadeaux d'affaires à Valence et Grenoble. Devis réactifs depuis 1998."
+    "description": "CPCR Communication — Objets publicitaires, textile personnalisé et cadeaux d'affaires à Grenoble et à Valence. Devis réactifs depuis 1998."
   },
   "hero": {
     "location": "Grenoble - Valence",
@@ -11,10 +11,10 @@
       "Cadeaux d'affaires",
       "Made in France"
     ],
-    "subtitle": "Depuis 1998, CPCR Communication vous conseille et sélectionne les meilleurs goodies adaptés à vos projets et à votre budget. Profitez d'un accompagnement de proximité à Valence et Grenoble, avec des devis réactifs.",
+    "subtitle": "Depuis 1998, CPCR Communication vous conseille et sélectionne les meilleurs goodies adaptés à vos projets et à votre budget. Profitez d'un accompagnement de proximité à Grenoble et à Valence, avec des devis réactifs.",
     "image": "images/Hero/Hero Goodies V3.webp",
     "imageAlt": "Sélection d'objets publicitaires et goodies personnalisés CPCR Communication",
-    "ctaCatalogues": "Découvrir nos catalogues",
+    "ctaCatalogues": "Découvrir nos gammes",
     "ctaDevis": "Demander un devis"
   },
   "presentation": {
@@ -38,7 +38,7 @@
     ]
   },
   "catalogues": {
-    "title": "Nos catalogues",
+    "title": "Nos gammes",
     "intro": "Survolez un catalogue pour afficher sa couverture, ou laissez le diaporama les présenter automatiquement. Cliquez pour ouvrir le catalogue.",
     "items": [
       {
