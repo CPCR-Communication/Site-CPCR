@@ -97,7 +97,7 @@
         if (!response.ok) throw new Error("Erreur réseau");
 
         showFeedback(
-          "Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.",
+          "Votre message a bien été envoyé. Une réponse vous sera apportée dans les plus brefs délais.",
           "success"
         );
         contactForm.reset();
