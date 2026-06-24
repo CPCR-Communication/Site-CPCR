@@ -461,6 +461,41 @@ textarea {
   align-items: center;
 }
 
+.catalogue-item__icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.catalogue-item__icon-preview {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-surface);
+  color: var(--admin-accent, #c99a00);
+}
+
+.catalogue-item__icon-preview svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.catalogue-item__icon-row select {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.catalogue-item__icon-row [data-cat-icon-custom] {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
 .catalogue-item__remove {
   margin-top: 1.6rem;
   padding: 0.45rem 0.7rem;

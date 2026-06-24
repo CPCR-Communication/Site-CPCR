@@ -16,9 +16,6 @@
     if (el && html != null) el.innerHTML = html;
   }
 
-  function padIndex(num) {
-    return String(num).padStart(2, "0");
-  }
 
   function resolveCatalogueIcon(item) {
     if (item.icon) return item.icon;
@@ -47,11 +44,6 @@
     link.target = "_blank";
     link.rel = "noopener noreferrer";
 
-    var indexSpan = document.createElement("span");
-    indexSpan.className = "catalogues-list__index";
-    indexSpan.setAttribute("aria-hidden", "true");
-    indexSpan.textContent = padIndex(index + 1);
-
     var iconWrap = document.createElement("span");
     iconWrap.className = "catalogues-list__icon";
     iconWrap.setAttribute("aria-hidden", "true");
@@ -67,14 +59,13 @@
     var mainWrap = document.createElement("span");
     mainWrap.className = "catalogues-list__main";
     mainWrap.appendChild(labelSpan);
-    mainWrap.appendChild(iconWrap);
 
     var arrow = document.createElement("i");
     arrow.setAttribute("data-lucide", "arrow-up-right");
     arrow.className = "catalogues-list__arrow";
     arrow.setAttribute("aria-hidden", "true");
 
-    link.appendChild(indexSpan);
+    link.appendChild(iconWrap);
     link.appendChild(mainWrap);
     link.appendChild(arrow);
 

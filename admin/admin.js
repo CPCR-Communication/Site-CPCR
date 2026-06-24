@@ -15,6 +15,22 @@
   var featuresEditor = document.getElementById("presentation-features-editor");
   var engagementEditor = document.getElementById("engagement-items-editor");
 
+  var CATALOGUE_ICONS = [
+    { value: "leaf", label: "Feuille — RSE / éco" },
+    { value: "factory", label: "Usine — fabrication" },
+    { value: "trees", label: "Arbres — nature" },
+    { value: "globe", label: "Globe — international" },
+    { value: "shirt", label: "T-shirt — textile" },
+    { value: "pen-line", label: "Stylo — écriture" },
+    { value: "gem", label: "Diamant — VIP / premium" },
+    { value: "flag", label: "Drapeau — Made in France" },
+    { value: "book-open", label: "Livre — catalogue" },
+    { value: "gift", label: "Cadeau" },
+    { value: "package", label: "Colis" },
+    { value: "recycle", label: "Recyclage" },
+    { value: "__custom__", label: "Autre (saisie libre)…" },
+  ];
+
   function getToken() {
     return sessionStorage.getItem(TOKEN_KEY) || "";
   }
@@ -107,6 +123,31 @@
     }
   }
 
+  function updateCatalogueIconPreview(previewEl, iconName) {
+    if (!previewEl) return;
+    var name = (iconName || "book-open").trim() || "book-open";
+    previewEl.innerHTML = '<i data-lucide="' + name + '"></i>';
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons({ root: previewEl });
+    }
+  }
+
+  function resolveCatalogueIconSelectValue(iconName) {
+    var value = (iconName || "").trim();
+    if (!value) return "book-open";
+    var known = CATALOGUE_ICONS.some(function (entry) {
+      return entry.value === value;
+    });
+    return known ? value : "__custom__";
+  }
+
+  function buildCatalogueIconSelectOptions(selectedValue) {
+    return CATALOGUE_ICONS.map(function (entry) {
+      var selected = entry.value === selectedValue ? " selected" : "";
+      return '<option value="' + entry.value + '"' + selected + ">" + entry.label + "</option>";
+    }).join("");
+  }
+
   function bindSimpleFields() {
     document.querySelectorAll("[data-path]").forEach(function (el) {
       var path = el.getAttribute("data-path");
@@ -186,7 +227,13 @@
       '<button type="button" class="catalogue-item__handle" title="Glisser pour réordonner" aria-label="Réordonner">⠿</button>' +
       '<div class="catalogue-item__body">' +
       '<div class="field"><label>Nom du catalogue</label><input type="text" data-cat-label /></div>' +
-      '<div class="field"><label>Pictogramme</label><input type="text" data-cat-icon placeholder="leaf, shirt, globe…" /><p class="field-hint">Nom d’icône Lucide — voir <a href="https://lucide.dev/icons/" target="_blank" rel="noopener noreferrer">lucide.dev/icons</a></p></div>' +
+      '<div class="field"><label>Pictogramme</label>' +
+      '<div class="catalogue-item__icon-row">' +
+      '<span class="catalogue-item__icon-preview" data-cat-icon-preview aria-hidden="true"></span>' +
+      '<select data-cat-icon-select></select>' +
+      '<input type="text" data-cat-icon-custom placeholder="Nom d’icône Lucide" hidden />' +
+      "</div>" +
+      '<p class="field-hint">Choisissez un pictogramme dans la liste, ou saisissez un nom Lucide — voir <a href="https://lucide.dev/icons/" target="_blank" rel="noopener noreferrer">lucide.dev/icons</a></p></div>' +
       '<div class="field"><label>Lien du catalogue</label><input type="url" data-cat-url placeholder="https://..." /></div>' +
       '<div class="field"><label>Image de couverture</label>' +
       '<div class="catalogue-item__image-row">' +
@@ -196,17 +243,42 @@
       "</div></div></div>" +
       '<button type="button" class="catalogue-item__remove">Supprimer</button>';
 
+    var iconSelect = el.querySelector("[data-cat-icon-select]");
+    var iconCustom = el.querySelector("[data-cat-icon-custom]");
+    var iconPreview = el.querySelector("[data-cat-icon-preview]");
+    var selectValue = resolveCatalogueIconSelectValue(item.icon);
+
+    iconSelect.innerHTML = buildCatalogueIconSelectOptions(selectValue);
+    iconCustom.value = selectValue === "__custom__" ? (item.icon || "") : "";
+    iconCustom.hidden = selectValue !== "__custom__";
+
     el.querySelector("[data-cat-label]").value = item.label || "";
-    el.querySelector("[data-cat-icon]").value = item.icon || "";
     el.querySelector("[data-cat-url]").value = item.url || "";
     el.querySelector("[data-cat-image]").value = item.image || "";
     updateImagePreview(el.querySelector(".catalogue-item__preview"), item.image);
+    updateCatalogueIconPreview(iconPreview, selectValue === "__custom__" ? item.icon : selectValue);
+
+    function setCatalogueIcon(iconName) {
+      content.catalogues.items[index].icon = iconName;
+      updateCatalogueIconPreview(iconPreview, iconName);
+    }
 
     el.querySelector("[data-cat-label]").addEventListener("input", function (e) {
       content.catalogues.items[index].label = e.target.value;
     });
-    el.querySelector("[data-cat-icon]").addEventListener("input", function (e) {
-      content.catalogues.items[index].icon = e.target.value;
+    iconSelect.addEventListener("change", function (e) {
+      var value = e.target.value;
+      if (value === "__custom__") {
+        iconCustom.hidden = false;
+        iconCustom.focus();
+        setCatalogueIcon(iconCustom.value.trim() || "book-open");
+        return;
+      }
+      iconCustom.hidden = true;
+      setCatalogueIcon(value);
+    });
+    iconCustom.addEventListener("input", function (e) {
+      setCatalogueIcon(e.target.value.trim() || "book-open");
     });
     el.querySelector("[data-cat-url]").addEventListener("input", function (e) {
       content.catalogues.items[index].url = e.target.value;
